@@ -4,7 +4,8 @@ from typing import Optional
 
 import torch
 from torch import nn
-from torchvision import models
+from torchvision import models, transforms as T
+import pytesseract
 from transformers import AutoModel, AutoTokenizer
 
 
@@ -36,5 +37,11 @@ class PassportCountryModel(nn.Module):
         return self.classifier(features)
 
     def extract_text(self, images: torch.Tensor) -> list[str]:
-        # Placeholder for OCR extraction
-        return ["" for _ in range(len(images))]
+        """Extract text from a batch of images using Tesseract OCR."""
+        to_pil = T.ToPILImage()
+        texts = []
+        for img in images:
+            pil_img = to_pil(img.cpu())
+            text = pytesseract.image_to_string(pil_img, lang="eng")
+            texts.append(text)
+        return texts

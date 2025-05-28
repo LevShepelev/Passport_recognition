@@ -16,8 +16,19 @@ This project demonstrates a PyTorch pipeline for detecting the issuing country o
 
 ```bash
 poetry install
-pre-commit install
+ pre-commit install
 ```
+
+### OCR
+
+Text extraction relies on [Tesseract](https://github.com/tesseract-ocr/tesseract).
+Install it using your system package manager, e.g. on Ubuntu:
+
+```bash
+sudo apt-get install tesseract-ocr
+```
+
+pytesseract will be installed automatically with the Python dependencies.
 
 ## Data
 
