@@ -13,6 +13,7 @@ Pillow = "*"
 numpy = "*"
 scikit-learn = "*"
 transformers = "*"
+pytesseract = "*"
 
 [tool.poetry.group.dev.dependencies]
 black = "22.3.0"
