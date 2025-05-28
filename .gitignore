@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+poetry.lock
+dataset/
+model.pth
+

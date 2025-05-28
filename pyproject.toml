@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "passport-recognition"
+version = "0.1.0"
+description = "Country detection from passport images"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "*"
+torchvision = "*"
+tqdm = "*"
+Pillow = "*"
+numpy = "*"
+scikit-learn = "*"
+transformers = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "22.3.0"
+flake8 = "6.1.0"
+flake8-bugbear = "*"
+pre-commit = "*"
+isort = "5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
